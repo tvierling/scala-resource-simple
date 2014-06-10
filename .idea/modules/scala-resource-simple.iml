@@ -5,7 +5,8 @@
       <configuration>
         <option name="compilerLibraryLevel" value="Project" />
         <option name="compilerLibraryName" value="SBT:: scala-compiler-bundle:2.11.1" />
-        <option name="compilerOptions" value="-feature" />
+        <option name="compilerOptions" value="-feature -target:jvm-1.6" />
+        <option name="deprecationWarnings" value="true" />
         <option name="optimiseBytecode" value="true" />
       </configuration>
     </facet>

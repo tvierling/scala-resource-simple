@@ -4,4 +4,6 @@ version := "0.1"
 
 scalaVersion := "2.11.1"
 
-scalacOptions in ThisBuild ++= Seq("-feature", "-optimise")
+crossScalaVersions := Seq("2.11.1", "2.10.4")
+
+scalacOptions in ThisBuild ++= Seq("-feature", "-optimise", "-deprecation", "-target:jvm-1.6")
