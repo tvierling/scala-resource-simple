@@ -4,5 +4,5 @@
 /.idea/workspace.xml
 /.idea/inspectionProfiles
 /target
-/project/project
 /*/target
+/project/*/target
