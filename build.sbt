@@ -12,6 +12,8 @@ scalacOptions in ThisBuild ++= Seq("-feature", "-optimise", "-deprecation", "-ta
 
 site.settings
 
+site.includeScaladoc()
+
 ghpages.settings
 
 git.remoteRepo := "git@github.com:tvierling/scala-resource-simple.git"

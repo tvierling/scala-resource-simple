@@ -48,15 +48,14 @@ abstract class AutoResource[T](protected val value: T) extends ManagedResource[T
   /**
    * Function implementing second-level depth of a for-comprehension.
    * Since this is only handling the resource disposal as a side effect,
-   * this is identical to [[AutoResource.map( )]] and simply passes through
-   * the value returned by the function `f`.
+   * this is identical to `map()` and simply passes through the value
+   * returned by the function `f`.
    */
   @inline final def flatMap[B](f: (T) => B): B = map(f)
 
   /**
    * Function implementing no-`yield` code handling in a for-comprehension.
-   * This simply defers to [[AutoResource.map( )]] and discards any value
-   * which may be returned.
+   * This simply defers to `map()` and discards any value returned.
    */
   @inline final def foreach[U](f: (T) => U): Unit = map(f)
 
@@ -72,7 +71,7 @@ abstract class AutoResource[T](protected val value: T) extends ManagedResource[T
    * as normal, but the `close()` call will still take place.
    *
    * After executing the function `f`, but before returning its return value,
-   * this calls [[AutoResource.close( )]]. If an exception which qualifies as
+   * this calls `close()`. If an exception which qualifies as
    * [[NonFatal]] is thrown during the call to `close()`, the exception
    * handler registered with [[AutoResource.exceptionHandler]] is called
    * (it defaults to discarding the exception).
@@ -102,7 +101,7 @@ abstract class AutoResource[T](protected val value: T) extends ManagedResource[T
 
 object AutoResource {
   /**
-   * A holder for a function to handle uncaught, non-fatal [[Throwable]]s in the `close()` logic
+   * A holder for a function to handle uncaught, non-fatal `Throwable`s in the `close()` logic
    * of an [[AutoResource]]. By default, this discards the exception. The value is thread-local,
    * and should be set by calling the `withValue` method on [[DynamicVariable]] to ensure that
    * the change is reversed upon exit of code needing a special handler.
