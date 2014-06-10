@@ -7,6 +7,9 @@ This small module for Scala projects provides an automatic resource management m
 
 The library is similar in concept to the [scala-arm][] project, but is intended to be far more lightweight; this implementation is meant to provide cleanup safety for resources only, and nothing more. With the exception of two optional structural type conversions, `scala-resource-simple` doesn't use reflection, `Manifest`s, or any other high-overhead code.
 
+[javaarm]: http://www.oracle.com/technetwork/articles/java/trywithresources-401775.html
+[scala-arm]: https://github.com/jsuereth/scala-arm
+
 
 Importing into your project
 ---------------------------
@@ -141,5 +144,35 @@ Above, if `readLine()` throws an exception, it bubbles up the stack and is throw
 By default, `exceptionHandler` simply discards the exception thrown during `close()`. See its documentation for more info.
 
 
-[javaarm]: http://www.oracle.com/technetwork/articles/java/trywithresources-401775.html
-[scala-arm]: https://github.com/jsuereth/scala-arm
+License
+-------
+
+scala-resource-simple is made available under the Unlicense (modified to add express permission to remove the Unlicense text itself), which releases this code into the public domain for any purpose. The license text with each source file is:
+
+    /*
+     * This is free and unencumbered software released into the public domain.
+     *
+     * Anyone is free to copy, modify, publish, use, compile, sell, or
+     * distribute this software, either in source code form or as a compiled
+     * binary, for any purpose, commercial or non-commercial, and by any
+     * means. This allowance includes removal of this public domain dedication
+     * and re-licensing this software under any other license.
+     *
+     * In jurisdictions that recognize copyright laws, the author or authors
+     * of this software dedicate any and all copyright interest in the
+     * software to the public domain. We make this dedication for the benefit
+     * of the public at large and to the detriment of our heirs and
+     * successors. We intend this dedication to be an overt act of
+     * relinquishment in perpetuity of all present and future rights to this
+     * software under copyright law.
+     *
+     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+     * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+     * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+     * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+     * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+     * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+     * OTHER DEALINGS IN THE SOFTWARE.
+     */
+
+(Why public domain? This library is so small that it makes no sense to take pains to license it any other way.)
