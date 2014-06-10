@@ -115,22 +115,22 @@ this is commonly extended, see the <a href="ManagedResource.html" class="extype"
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
               <ol><li name="org.duh.resource.AutoResource#close" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="close():Unit"></a>
-      <a id="close():Unit"></a>
+      <a id="close(value:T):Unit"></a>
+      <a id="close(T):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">close</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">close</span><span class="params">(<span name="value">value: <span class="extype" name="org.duh.resource.AutoResource.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.duh.resource.AutoResource@close():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.duh.resource.AutoResource@close(value:T):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Dispose of the resource represented by <a href="#value:T" class="extmbr" name="org.duh.resource.AutoResource#value">AutoResource.value</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Dispose of the resource represented by <a href="#value:T" class="extmbr" name="org.duh.resource.AutoResource#value">AutoResource.value</a>.
+      <p class="shortcomment cmt">Dispose of the resource represented by <code>value</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Dispose of the resource represented by <code>value</code>.
 This method must be implemented by all concrete subclasses.
 </p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li></ol>
@@ -524,23 +524,6 @@ handler registered with <a href="AutoResource$.html#exceptionHandler:scala.util.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.duh.resource.AutoResource#value" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="value:T"></a>
-      <a id="value:T"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">value</span><span class="result">: <span class="extype" name="org.duh.resource.AutoResource.T">T</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.duh.resource.AutoResource@value:T" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">the resource value being manage</p><div class="fullcomment"><div class="comment cmt"><p>the resource value being manage</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
