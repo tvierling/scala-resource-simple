@@ -36,14 +36,14 @@ import scala.util.control.NonFatal
  * @param value the resource value being manage
  * @tparam T type of the contained resource
  */
-abstract class AutoResource[T](protected val value: T) extends ManagedResource[T] {
+abstract class AutoResource[T](private val value: T) extends ManagedResource[T] {
   /**
    * Allow for one class to provide both the [[AutoResource]] and the [[ManagedResource]].
    * See the documentation for [[ManagedResource]] for more information.
    *
    * @return this object
    */
-  @inline final def auto: AutoResource[T] = this
+  @inline final override def auto: AutoResource[T] = this
 
   /**
    * Function implementing second-level depth of a for-comprehension.
@@ -85,7 +85,7 @@ abstract class AutoResource[T](protected val value: T) extends ManagedResource[T
       f(value)
     } finally {
       try {
-        close()
+        close(value)
       } catch {
         case e if NonFatal(e) => AutoResource.exceptionHandler.value(e)
       }
@@ -93,10 +93,10 @@ abstract class AutoResource[T](protected val value: T) extends ManagedResource[T
   }
 
   /**
-   * Dispose of the resource represented by [[AutoResource.value]].
+   * Dispose of the resource represented by `value`.
    * This method must be implemented by all concrete subclasses.
    */
-  protected def close(): Unit
+  protected def close(value: T): Unit
 }
 
 object AutoResource {

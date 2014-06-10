@@ -42,7 +42,7 @@ object methodImplicits {
     case c: Closeable => closeableResource(c).asInstanceOf[ManagedResource[T]]
 
     case _ => new AutoResource[T](r) {
-      override protected def close() {
+      override protected def close(value: T) {
         value.close()
       }
     }
@@ -50,7 +50,7 @@ object methodImplicits {
 
   /** Makes any object with a `dispose()` method usable as an [[AutoResource]]. */
   implicit def disposeMethod[T <: {def dispose() : Any}](r: T): ManagedResource[T] = new AutoResource[T](r) {
-    override protected def close() {
+    override protected def close(value: T) {
       value.dispose()
     }
   }

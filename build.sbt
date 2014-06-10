@@ -1,8 +1,7 @@
-import Build._
 
 name := "scala-resource-simple"
 
-version := "0.2-SNAPSHOT"
+version := "0.2"
 
 scalaVersion := "2.11.1"
 

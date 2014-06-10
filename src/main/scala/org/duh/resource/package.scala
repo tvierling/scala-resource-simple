@@ -33,14 +33,14 @@ import scala.language.implicitConversions
 package object resource {
   /** The most common use case: a resource that implements `java.io.Closeable`. */
   implicit def closeableResource[T <: Closeable](r: T): ManagedResource[T] = new AutoResource[T](r) {
-    override protected def close() {
+    override protected def close(value: T) {
       value.close()
     }
   }
 
   /** Separate conversion to isolate Java 7 `AutoCloseable` support for classes that are not `Closeable`. */
   implicit def autoCloseableResource[T <: AutoCloseable](r: T): ManagedResource[T] = new AutoResource[T](r) {
-    override protected def close() {
+    override protected def close(value: T) {
       value.close()
     }
   }
