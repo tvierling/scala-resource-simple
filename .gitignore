@@ -1,0 +1,8 @@
+/.idea/dictionaries
+/.idea/libraries/*.xml
+/.idea/rebel_project.xml
+/.idea/workspace.xml
+/.idea/inspectionProfiles
+/target
+/project/project
+/*/target
