@@ -103,13 +103,11 @@ As of this writing, besides `Closeable` and `AutoCloseable`, two other conversio
 
 This is particularly useful prior to Java 7 (which peppered the standard library with `Closeable` in many places where it was previously missing), but also allows for many other types which do not have specific implicit conversions available.
 
-Defining an implicit conversion for any other type is fairly simple, and is described in the documentation for `org.duh.resource.ManagedResource`.
-
 
 What about other type conversions?
 ----------------------------------
 
-It's simple to implement a new conversion which provides the `.auto` method. See the documentation for `ManagedResource` for a full definition. The short version is this:
+It's simple to implement a new conversion which provides the `.auto` method. See the [documentation for `ManagedResource`](https://tvierling.github.io/scala-resource-simple/latest/api/org/duh/resource/ManagedResource.html) for a full definition. The short version is this:
 
     // this type wants you to call squash() to release its resources
     trait MySquashable {
@@ -127,7 +125,7 @@ Note that the return type of the method is explicitly declared to be `ManagedRes
 What about exceptions thrown by `close()`?
 ------------------------------------------
 
-There is a scoped function holder in `object org.duh.resource.AutoResource.exceptionHandler`. This is an instance of `scala.util.DynamicVariable`, which can be set for a given code block and automatically reset afterwards:
+There is a scoped function holder in [`AutoResource.exceptionHandler`](https://tvierling.github.io/scala-resource-simple/latest/api/org/duh/resource/AutoResource$.html). This is an instance of [`DynamicVariable`](http://www.scala-lang.org/api/current/scala/util/DynamicVariable.html), which can be set for a given code block and automatically reset afterwards:
 
     def readFirstLine(infile: String): String = {
       AutoResource.exceptionHandler.withValue(e => e.printStackTrace()) {
