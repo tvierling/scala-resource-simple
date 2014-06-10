@@ -176,3 +176,9 @@ scala-resource-simple is made available under the Unlicense (modified to add exp
      */
 
 (Why public domain? This library is so small that it makes no sense to take pains to license it any other way.)
+
+
+Contacting the author
+---------------------
+
+Besides adding issues / feature requests on GitHub, you can also reach the author, Todd Vierling, at: tv@duh.org
