@@ -26,6 +26,8 @@
 
 package org.duh.resource
 
+import java.io.Closeable
+
 import scala.language.{implicitConversions, reflectiveCalls}
 
 /**
@@ -35,9 +37,14 @@ import scala.language.{implicitConversions, reflectiveCalls}
  */
 object methodImplicits {
   /** Makes any object with a `close()` method usable as an [[AutoResource]]. */
-  implicit def closeMethod[T <: {def close() : Any}](r: T): ManagedResource[T] = new AutoResource[T](r) {
-    override protected def close() {
-      value.close()
+  implicit def closeMethod[T <: {def close() : Any}](r: T): ManagedResource[T] = r match {
+    // in case this type really does implement Closeable at runtime, avoid reflection
+    case c: Closeable => closeableResource(c).asInstanceOf[ManagedResource[T]]
+
+    case _ => new AutoResource[T](r) {
+      override protected def close() {
+        value.close()
+      }
     }
   }
 
