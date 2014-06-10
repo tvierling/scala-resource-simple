@@ -26,6 +26,8 @@ and you will have a `target/scala-2.10/scala-resource-simple_2.10-VERSION.jar`. 
 Basic Usage
 -----------
 
+The latest snapshot scaladoc is [available here](https://tvierling.github.io/scala-resource-simple/latest/api/).
+
 By importing the main package, implicit conversions for `java.io.Closeable` and `java.lang.AutoCloseable` are automatically in scope. Use of any resource implementing these interfaces is as simple as adding `.auto' to the end of the resource in a for-comprehension, such as:
 
     import org.duh.resource._
