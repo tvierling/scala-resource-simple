@@ -115,8 +115,9 @@ It's simple to implement a new conversion which provides the `.auto` method. See
     }
     
     implicit def mySquashableResource[T <: MySquashable](r: T): ManagedResource[T] =
-      new AutoResource[T] {
-        override protected def close() { r.squash() }
+      new AutoResource[T](r) {
+        // use "value", not "r", below to avoid an extra hidden field
+        override protected def close() { value.squash() }
       }
 
 Note that the return type of the method is explicitly declared to be `ManagedResource[T]`, *not* `AutoResource[T]`. This allows exposure of the `auto` method *without* exposing `foreach`, `flatMap`, and `map` as implicit conversion methods on the type `MySquashable` (which could lead to surprising results if used directly).
