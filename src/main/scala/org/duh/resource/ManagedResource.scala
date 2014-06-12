@@ -59,7 +59,8 @@ package org.duh.resource
  *
  * {{{
  *   implicit def myResource[T <: MyType](r: T): ManagedResource[T] = new AutoResource[T](r) {
- *     override protected def close() {
+ *     override protected def close(value: T) {
+ *       // use arg "value", not "r", below to avoid an extra class field for "r"
  *       value.myCloseMethod()
  *     }
  *   }
