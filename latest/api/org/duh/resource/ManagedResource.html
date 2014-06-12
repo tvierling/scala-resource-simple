@@ -62,7 +62,8 @@ in its return type signature rather than <code>AutoResource[T]</code>, while the
 class actually is a subclass of <a href="AutoResource.html" class="extype" name="org.duh.resource.AutoResource">AutoResource</a>. This avoids an extra layer of allocation,
 while hiding the <code>foreach</code>, <code>flatMap</code>, and <code>map</code> methods which may not be desirable on
 arbitrary types:</p><pre><span class="kw">implicit</span> <span class="kw">def</span> myResource[T <span class="kw">&lt;:</span> MyType](r: T): ManagedResource[T] = <span class="kw">new</span> AutoResource[T](r) {
-<span class="kw">override</span> <span class="kw">protected</span> <span class="kw">def</span> close() {
+<span class="kw">override</span> <span class="kw">protected</span> <span class="kw">def</span> close(value: T) {
+  <span class="cmt">// use arg "value", not "r", below to avoid an extra class field for "r"</span>
   value.myCloseMethod()
 }
 }</pre><p>However, in some situations it may be more useful to have the returned <a href="AutoResource.html" class="extype" name="org.duh.resource.AutoResource">AutoResource</a> be
