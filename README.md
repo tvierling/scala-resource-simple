@@ -35,7 +35,11 @@ In Ivy:
 
     <dependency org="org.duh" name="scala-resource-simple_2.11" rev="0.3"/>
 
-If you are using Scala 2.10, replace the `2.11` instances above with `2.10` in the Maven or Ivy examples.
+In Gradle:
+
+    compile 'org.duh:scala-resource-simple_2.11:0.3'
+
+If you are using Scala 2.10, replace the `2.11` instances above with `2.10` in the Maven, Ivy, or Gradle examples.
 
 
 Manual Build
