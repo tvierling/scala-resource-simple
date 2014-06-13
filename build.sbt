@@ -2,7 +2,7 @@ organization := "org.duh"
 
 name := "scala-resource-simple"
 
-version := "0.3-SNAPSHOT"
+version := "0.3"
 
 scalaVersion := "2.11.1"
 
