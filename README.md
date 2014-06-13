@@ -14,16 +14,42 @@ The library is similar in concept to the [scala-arm][] project, but is intended 
 Importing into your project
 ---------------------------
 
-As of this writing, scala-resource-simple is not published to a Maven repository yet. It is in an alpha-quality state, though the fundamental operation (managing a resource through a for-comprehension) works. I intend to publish it after some thorough unit tests are implemented.
+In SBT (will automatically grab the build for the appropriate Scala version):
 
-To build a jar file, simply run `sbt package`. The output jar can be found in `target/scala-2.11/scala-resource-simple_2.11-VERSION.jar`. By default, this compiles with Scala 2.11, but it will build with 2.10 as well. To do that, run sbt interactively, then enter:
+    libraryDependencies += "org.duh" %% "scala-resource-simple" % "0.3"
 
-    > ++ "2.10.4"
-    > package
+*or* to grab builds for all Scala versions:
 
-and you will have a `target/scala-2.10/scala-resource-simple_2.10-VERSION.jar`. Or, to build for both Scala 2.10 and 2.11 at the same time, run sbt interactively and enter:
+    libraryDependencies += "org.duh" %% "scala-resource-simple_2.10" % "0.3"
+    libraryDependencies += "org.duh" %% "scala-resource-simple_2.11" % "0.3"
 
-    > + package
+In Maven:
+
+    <dependency>
+       <groupId>org.duh</groupId>
+       <artifactId>scala-resource-simple_2.11</artifactId>
+       <version>0.3</version>
+    </dependency>
+
+In Ivy:
+
+    <dependency org="org.duh" name="scala-resource-simple_2.11" rev="0.3"/>
+
+If you are using Scala 2.10, replace the `2.11` instances above with `2.10` in the Maven or Ivy examples.
+
+
+Manual Build
+------------
+
+To build from source, you need `sbt` 0.13 or later installed. See http://www.scala-sbt.org/ for more information.
+
+Run the following to build for Scala 2.11:
+
+    sbt package
+
+To generate builds for both Scala 2.10 and 2.11, run:
+
+    sbt "+ package"
 
 
 Basic Usage
