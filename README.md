@@ -10,6 +10,8 @@ The library is similar in concept to the [scala-arm][] project, but is intended 
 [javaarm]: http://www.oracle.com/technetwork/articles/java/trywithresources-401775.html
 [scala-arm]: https://github.com/jsuereth/scala-arm
 
+Current autobuild status: [![Build Status](https://drone.io/github.com/tvierling/scala-resource-simple/status.png)](https://drone.io/github.com/tvierling/scala-resource-simple/latest)
+
 
 Importing into your project
 ---------------------------
