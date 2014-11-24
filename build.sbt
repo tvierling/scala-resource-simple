@@ -4,9 +4,9 @@ name := "scala-resource-simple"
 
 version := "0.4-SNAPSHOT"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.4"
 
-crossScalaVersions := Seq("2.11.1", "2.10.4")
+crossScalaVersions := Seq("2.11.4", "2.10.4")
 
 scalacOptions in ThisBuild ++= Seq("-feature", "-optimise", "-deprecation", "-target:jvm-1.6")
 
