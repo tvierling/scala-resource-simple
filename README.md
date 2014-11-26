@@ -47,7 +47,7 @@ If you are using Scala 2.10, replace the `2.11` instances above with `2.10` in t
 Manual Build
 ------------
 
-To build from source, you need `sbt` 0.13 or later installed. See http://www.scala-sbt.org/ for more information.
+Building from source involves using `sbt` 0.13 or later.
 
 Run the following to build for Scala 2.11:
 
@@ -56,6 +56,10 @@ Run the following to build for Scala 2.11:
 To generate builds for both Scala 2.10 and 2.11, run:
 
     sbt "+ package"
+
+If `sbt` is not installed on your system, you can use a bundled sbt launcher from this source tree. Substitute `sh project/sbt.sh` for `sbt` in the commands above.
+
+Or, if you have Apache Ant installed, you can run `ant build` to do the equivalent of `sbt "+ package"` above, which automatically uses the bundled sbt launcher.
 
 
 Basic Usage
