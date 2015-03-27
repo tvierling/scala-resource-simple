@@ -87,7 +87,7 @@ abstract class AutoResource[T](private val value: T) extends ManagedResource[T] 
       try {
         close(value)
       } catch {
-        case e if NonFatal(e) => AutoResource.exceptionHandler.value(e)
+        case NonFatal(e) => AutoResource.exceptionHandler.value(e)
       }
     }
   }
