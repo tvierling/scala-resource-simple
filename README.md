@@ -1,6 +1,8 @@
 scala-resource-simple
 =====================
 
+[![Join the chat at https://gitter.im/tvierling/scala-resource-simple](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tvierling/scala-resource-simple?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Lightweight automatic resource management for Scala**
 
 This small module for Scala projects provides an automatic resource management method inspired by the support added to Java 7 in its ["try-with-resources"][javaarm] construct.
