@@ -1,7 +1,7 @@
 scala-resource-simple
 =====================
 
-[![Join the chat at https://gitter.im/tvierling/scala-resource-simple](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tvierling/scala-resource-simple?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/tvierling/scala-resource-simple](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tvierling/scala-resource-simple?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Codacy Badge](https://www.codacy.com/project/badge/6077971591d440d6a4041b918b012da4)](https://www.codacy.com/app/tv/scala-resource-simple_2) [![Build Status](https://drone.io/github.com/tvierling/scala-resource-simple/status.png)](https://drone.io/github.com/tvierling/scala-resource-simple/latest)
 
 **Lightweight automatic resource management for Scala**
 
@@ -11,8 +11,6 @@ The library is similar in concept to the [scala-arm][] project, but is intended 
 
 [javaarm]: http://www.oracle.com/technetwork/articles/java/trywithresources-401775.html
 [scala-arm]: https://github.com/jsuereth/scala-arm
-
-Current autobuild status: [![Build Status](https://drone.io/github.com/tvierling/scala-resource-simple/status.png)](https://drone.io/github.com/tvierling/scala-resource-simple/latest)
 
 
 Importing into your project
